@@ -1,0 +1,20 @@
+# A = 1     A != 0
+
+def verschiebezahl(zeichen):
+    return ord(zeichen) - 64
+
+def verschluesselteszeichen(zeichen, schluessel):
+    zeichen = zeichen.upper()
+    schluessel = schluessel.upper()
+    ende = (ord(zeichen) - 64) + verschiebezahl(schluessel)
+    while ende > 26:
+        ende = ende - 26
+    return chr(ende + 64)
+
+def entschluesselteszeichen(zeichen, schluessel):
+    zeichen = zeichen.upper()
+    schluessel = schluessel.upper()
+    ende = (ord(zeichen) - 64) - verschiebezahl(schluessel)
+    while ende < 26:
+        ende = ende + 26
+    return chr(ende + 64)
