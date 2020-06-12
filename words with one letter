@@ -1,0 +1,36 @@
+def verschiebezahl(zeichen):
+    return ord(zeichen) - 64
+
+def verschluesseltezeichen(text, schluessel):
+    text = text.upper()
+    schluessel = schluessel.upper()
+    neuertext = ""
+    for letters in text:
+        if letters != " ":
+            if ord(letters) >= 65 and ord(letters) <= 90:
+                zwischen = (ord(letters) - 64) + verschiebezahl(schluessel)
+                while zwischen > 26:
+                    zwischen = zwischen - 26
+                neuertext = neuertext + chr(zwischen + 64)
+            else :
+                neuertext = neuertext + letters
+        else :
+            neuertext = neuertext + " "
+    return neuertext
+
+def entschluesseltezeichen(text, schluessel):
+    text = text.upper()
+    schluessel = schluessel.upper()
+    neuertext = ""
+    for letters in text:
+        if letters != " ":
+            if ord(letters) >= 65 and ord(letters) <= 90:
+                zwischen = (ord(letters) - 64) - verschiebezahl(schluessel)
+                while zwischen < 26:
+                    zwischen = zwischen + 26
+                neuertext = neuertext + chr(zwischen + 64)
+            else :
+                neuertext = neuertext + letters
+        else :
+            neuertext = neuertext + " "
+    return neuertext
