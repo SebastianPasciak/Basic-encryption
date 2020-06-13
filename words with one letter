@@ -26,7 +26,7 @@ def entschluesseltezeichen(text, schluessel):
         if letters != " ":
             if ord(letters) >= 65 and ord(letters) <= 90:
                 zwischen = (ord(letters) - 64) - verschiebezahl(schluessel)
-                while zwischen < 26:
+                while zwischen < 1:
                     zwischen = zwischen + 26
                 neuertext = neuertext + chr(zwischen + 64)
             else :
