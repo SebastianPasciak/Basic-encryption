@@ -33,7 +33,7 @@ def entschluesselterTextVig(text, schluessel):
                 if counter == len(schluessel):
                     counter = 0
                 ztext = (ord(letter) - 64) - verschiebezahl(schluessel[counter])
-                while ztext < 26:
+                while ztext < 1:
                     ztext = ztext + 26
                 ntext = ntext + chr(ztext + 64)
                 counter = counter + 1
