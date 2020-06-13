@@ -15,6 +15,6 @@ def entschluesselteszeichen(zeichen, schluessel):
     zeichen = zeichen.upper()
     schluessel = schluessel.upper()
     ende = (ord(zeichen) - 64) - verschiebezahl(schluessel)
-    while ende < 26:
+    while ende < 1:
         ende = ende + 26
     return chr(ende + 64)
